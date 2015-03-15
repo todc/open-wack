@@ -1,10 +1,5 @@
 # TODO
 
-### What do we call the "thing" users are acknowledging?
-document set
-campaign
-policy
-
 ### Pages
   - login
   - view all signed/unsigned docs
@@ -28,18 +23,4 @@ policy
   - (admin) manage groups
   - (admin) manage authentication
   - (admin) customize app branding
-  
-  
-### DB Schema
-  √ users
-  √ user_privileges
-  √ groups
-  √ campaigns
-  √ campaign_managers
-  √ campaign_attachments
-  √ campaign_acknowledgements
-  √ campaign_emails (versioned campaign email config)
-  √ campaign_email_deliveries (log of who received which emails and when)
-  √ campaign_custom_fields
-  √ campaign_custom_field_values
   
