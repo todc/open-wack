@@ -2,7 +2,7 @@ package com.todc.openwack.model;
 
 
 /**
- * @author Tim O'Donnell (tim.odonnell@imperva.com)
+ * @author Tim O'Donnell (tim@timodonnell.com)
  */
 public interface CustomFieldType {
 

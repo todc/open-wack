@@ -24,6 +24,9 @@ public class User implements Serializable {
     @Column(name = "username", unique = true, nullable = false)
     private String username;
 
+    @Column(name = "password_hash")
+    private String passwordHash;
+
     @Column(name = "email", nullable = false)
     private String email;
 
@@ -76,6 +79,14 @@ public class User implements Serializable {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getPasswordHash() {
+        return passwordHash;
+    }
+
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
     }
 
     public String getEmail() {
