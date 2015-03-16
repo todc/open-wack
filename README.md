@@ -24,3 +24,17 @@
   - (admin) manage authentication
   - (admin) customize app branding
   
+  
+### Links
+
+Spring Boot Security
+http://kielczewski.eu/2014/12/spring-boot-security-application/
+
+JPA Security Sample Project
+https://github.com/scratches/jpa-method-security-sample
+
+Spring Boot, Hibernate, and Spring Security
+http://shruubi.com/2014/12/03/spring-boot-hibernate-and-spring-security-a-step-in-the-right-direction-for-java/
+
+Baeldung: Spring Security Authentication Tutorial
+http://www.baeldung.com/spring-security-authentication-and-registration
