@@ -1,6 +1,9 @@
 package com.todc.openwack.model;
 
 
+import com.google.common.base.Functions;
+import com.google.common.collect.Iterables;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -53,13 +56,13 @@ public class User implements Serializable {
     )
     private List<UserGroup> groups;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
-        name = "user2user_group",
+        name = "user2user_role",
         joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
-        inverseJoinColumns = {@JoinColumn(name = "group_id", referencedColumnName = "id")}
+        inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")}
     )
-    private List<UserPrivilege> privileges;
+    private List<UserRole> roles;
 
 
     // ------------------------------------------------------ Getters / Setters
@@ -129,15 +132,23 @@ public class User implements Serializable {
         this.groups = groups;
     }
 
-    public List<UserPrivilege> getPrivileges() {
-        return privileges;
+    public List<UserRole> getRoles() {
+        return roles;
     }
 
-    public void setPrivileges(List<UserPrivilege> privileges) {
-        this.privileges = privileges;
+    public void setRoles(List<UserRole> roles) {
+        this.roles = roles;
     }
 
-
+    
     // --------------------------------------------------------- Public Methods
+    
+    
+    public String[] getRoleNames() {
+        if (roles == null) return null;
+        
+        Iterable<String> roleNames = Iterables.transform(roles, Functions.toStringFunction());
+        return Iterables.toArray(roleNames, String.class);
+    }
 
 }

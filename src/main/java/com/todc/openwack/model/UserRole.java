@@ -10,8 +10,8 @@ import java.util.List;
  * @author Tim O'Donnell (tim@timodonnell.com)
  */
 @Entity
-@Table(name = "user_privilege")
-public class UserPrivilege implements Serializable {
+@Table(name = "user_role")
+public class UserRole implements Serializable {
 
 
     // ----------------------------------------------------- Instance Variables
@@ -25,7 +25,7 @@ public class UserPrivilege implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(mappedBy = "privileges")
+    @ManyToMany(mappedBy = "roles")
     private List<User> users;
 
 
@@ -54,5 +54,13 @@ public class UserPrivilege implements Serializable {
 
     public void setUsers(List<User> users) {
         this.users = users;
+    }
+    
+    
+    // --------------------------------------------------------- Public Methods
+    
+    
+    public String toString() {
+        return name;
     }
 }

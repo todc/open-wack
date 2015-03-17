@@ -4,8 +4,24 @@
     <title>Spring Security Example</title>
 </head>
 <body>
-<h1>Welcome!</h1>
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
 
-<p>Click <a th:href="@{/hello}">here</a> to see a greeting.</p>
+<h3>Awaiting Acknowledgement From You</h3>
+<ul>
+    <li th:each="campaign : ${unacknowledged}">
+        <span th:text="${campaign.name}">Campaign 1</span>
+    </li>
+</ul>
+
+<h3>Already Acknowledgement By You</h3>
+<ul>
+    <li th:each="campaign : ${acknowledged}">
+        <span th:text="${campaign.name}">Campaign 2</span>
+    </li>
+</ul>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>

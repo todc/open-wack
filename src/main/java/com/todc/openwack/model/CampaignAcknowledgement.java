@@ -11,7 +11,7 @@ import java.util.List;
  * @author Tim O'Donnell (tim@timodonnell.com)
  */
 @Entity
-@Table(name = "campaign_acknowledgement")
+@Table(name = "campaign_acknowledgements")
 public class CampaignAcknowledgement implements Serializable {
 
 

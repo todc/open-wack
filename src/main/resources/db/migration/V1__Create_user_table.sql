@@ -10,5 +10,3 @@ CREATE TABLE user (
 );
 
 CREATE INDEX indx_username ON user(username);
-
-INSERT INTO user VALUES (1, 'admin', '$2a$10$yC8jHjXIFXp6lh1K9ksfZuwTV4e9EUEBq8ZLOO/b.aaMB.88rf/E6', 'admin@example.com', 'Admin User', null);

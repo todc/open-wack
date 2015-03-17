@@ -1,4 +1,4 @@
-CREATE TABLE campaign_acknowledgement (
+CREATE TABLE campaign_acknowledgements (
   id              SERIAL,
   campaign_id     NUMERIC,
   user_id         NUMERIC,

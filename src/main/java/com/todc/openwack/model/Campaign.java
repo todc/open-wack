@@ -28,6 +28,9 @@ public class Campaign implements Serializable {
     @ManyToMany(mappedBy = "ownedCampaigns")
     private List<User> owners;
 
+    @OneToMany(mappedBy = "campaign")
+    private List<CampaignAcknowledgement> acknowledgements;
+
     @Column(name = "send_ack_email")
     private boolean ackReceiptsEnabled;
 
@@ -62,6 +65,22 @@ public class Campaign implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<User> getOwners() {
+        return owners;
+    }
+
+    public void setOwners(List<User> owners) {
+        this.owners = owners;
+    }
+
+    public List<CampaignAcknowledgement> getAcknowledgements() {
+        return acknowledgements;
+    }
+
+    public void setAcknowledgements(List<CampaignAcknowledgement> acknowledgements) {
+        this.acknowledgements = acknowledgements;
     }
 
     public boolean isAckReceiptsEnabled() {
